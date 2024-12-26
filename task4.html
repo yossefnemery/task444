@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HOME</title>
+    </head>
+    <body>
+        <p id="p1">Hello world 1 </p>
+        <p id="p2">Hello world 2 </p>
+        <p id="p3">Hello world 3 </p>
+        <p id="p4">Hello world 4 </p>
+        <label>Enter Color:</label><br>
+        <input type="text" id="colorInput" placeholder="color">
+        <br><br>
+        <label>Enter Font Size (in pixels): </label><br>
+        <input type="number" id="fontSizeInput" placeholder="20 px">
+        <br><br>
+        <button onclick="changeStyle()">click here to change Style </button>
+        <script>
+            function changeStyle() 
+            {
+                let color = document.getElementById("colorInput").value;
+                let fontSize = document.getElementById("fontSizeInput").value;
+                if (color && fontSize) 
+                {
+                    let paragraphs = document.querySelectorAll("p");
+                    paragraphs.forEach
+                    (paragraph => 
+                    {
+                        paragraph.style.color = color; 
+                        paragraph.style.fontSize = fontSize + "px";
+                    }
+                    )
+                } 
+                else
+                {
+                    alert("Please enter both a color and font size.") 
+                }
+            }
+        </script>
+    </body>
+</html>
